@@ -1,4 +1,4 @@
-def function() {
+def buildApp() {
   echo 'building the application with groovy!'
 }
 

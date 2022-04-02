@@ -7,7 +7,7 @@ pipeline {
 		stage("build") {
 			when {
 				expression {
-					BRANCH_NAME == 'dev' && CODE_CHANGES == true
+					BRANCH_NAME == 'main' && CODE_CHANGES == true
 				}
 			}
 			steps {
@@ -29,7 +29,7 @@ pipeline {
 			steps {
 				echo 'deploying the application...'
 				withCredentials([
-					usernamePassword(credentials: 'git-id', usernameVariable: USER, passwordVariable: PWD)
+					usernamePassword(credentials: 'git-id', usernameVariable: USER)
 				]){
 					echo 'deploying with ${USER}'
 				}
